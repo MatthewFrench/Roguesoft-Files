@@ -1,0 +1,154 @@
+body {
+	background-color:#0066CC;
+}
+
+a:link {color: #6699cc; font-weight:normal; text-decoration:none;}
+a:hover {color: #cc6666; font-weight:normal; text-decoration:underline;}
+a:visited {color: #996699; font-weight:normal; text-decoration:none;}
+img {border:none;}
+
+#masterDiv {
+	position:absolute;
+	z-index:1;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+}
+
+#musicField {
+	position:relative;
+	z-index:99;
+	left:0px;
+	top:50px;
+	margin-left:auto;
+	margin-right:auto;
+	width:400px;
+	height:16px;
+	overflow:hidden;
+	visibility:visible;
+}
+
+#gameField {
+	position:relative;
+	z-index:1;
+	left:0px;
+	top:40px;
+	margin-left:auto;
+	margin-right:auto;
+	width:856px;
+	height:572px;
+	background-color:#3366ff;
+	background-repeat:repeat;
+	overflow:hidden;
+}
+
+#titleScreen {
+	position:absolute;
+	z-index:2;
+	left:0px;
+	top:0px;
+	width:856px;
+	height:572px;
+	background-image:url(images/titleScreen.png);
+	background-repeat:no-repeat;
+	overflow:hidden;
+	visibility:hidden;
+}
+
+#overworldScreen {
+	position:absolute;
+	z-index:1;
+	left:0px;
+	top:0px;
+	width:856px;
+	height:572px;
+	overflow:hidden;
+	visibility:hidden;
+}
+
+#gridField {
+	position:absolute;
+	z-index:1;
+	left:0px;
+	top:0px;
+	width:572px;
+	height:572px;
+	overflow:hidden;
+}
+
+#roomDiv {
+	position:absolute;
+	z-index:1;
+	left:0px;
+	top:0px;
+	width:572px;
+	height:572px;
+	background-image:url(images/room1.png);
+	background-repeat:no-repeat;
+}
+
+#statField {
+	position:absolute;
+	z-index:1;
+	right:0px;
+	top:0px;
+	width:284px;
+	height:572px;
+	background-image:url(images/statBackground.png);
+	background-repeat:no-repeat;
+	overflow:hidden;
+}
+
+
+
+
+
+.entityDiv {
+	position:absolute;
+	z-index:20;
+	left:0px;
+	top:0px;
+	width:44px;
+	height:44px;
+	overflow:hidden;
+}
+
+.entityImg {
+	position:absolute;
+	z-index:1;
+	left:0px;
+	top:0px;
+	width:44px;
+	height:44px;
+	overflow:hidden;
+}
+
+
+
+
+
+#sandBox {
+	position:relative;
+	z-index:1;
+	left:0px;
+	top:0px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:60px;
+	padding:20px;
+	width:640px;
+	height:auto;
+	background-color:#3366ff;
+	background-repeat:repeat;
+}
+
+#SBTextField {
+	position:relative;
+	z-index:1;
+	left:0px;
+	top:0px;
+	width:200px;
+	height:80px;
+	overflow:hidden;
+}

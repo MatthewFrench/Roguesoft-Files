@@ -1,0 +1,767 @@
+{\rtf1\mac\ansicpg10000\cocoartf824\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset77 ComicSansMS;\f1\froman\fcharset77 Times-Roman;\f2\fswiss\fcharset77 ArialMT;
+\f3\froman\fcharset77 Times-Bold;\f4\froman\fcharset77 Times-Italic;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue255;\red255\green0\blue0;}
+\margl1440\margr1440\vieww9960\viewh12740\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 \
+
+\f1\fs28 About Silver's RPG Making Guide v1.0.2
+\f0 \
+
+\fs24 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1 \cf0 Silver's RPG Making Guide is Copyright 
+\f2 \'a9
+\f1  2007, Jonathan Phillips\
+All rights reserved.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1 \cf0 Original release: 19 October 07\
+Update release: 22 Apr 08\
+\
+Silver's RPG Making Guide was written for Mac GameMaker version 3.9.7. I do not guarantee that any of the content listed will be accurate for any other versions of Mac GameMaker. Neither the name of the author nor the names of other contributers to this guide may be used to endorse or promote products derived from this guide without specific prior written permission. Silver's RPG Making Guide is freeware and may NOT be redistributed for a fee or bundled with other software.\
+\
+Thank you for downloading my guide on RPG making. If you have any comments or inquiries regarding it or if you wish to see more of my work you can contact me at: http://www.roguesoft.co.uk\
+\
+You can download Mac GameMaker at: http://members.aol.com/AlStaff/GameMakerHelp.html\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 Blue text\cf0  = Code\
+\cf3 Red text\cf0  = User Input
+\f0 \
+\
+\
+
+\f3\b\fs36 Intro To Game Designing
+\f1\b0\fs28 \
+\
+Welcome, and congratulations on getting this far! Most people who develop an interest in designing their own RPG give up before they even begin! There are some who might get as far as to learn a bit of programming, but they soon abandon all their hopes and dreams of moulding their very own dungeon exploring, treasure finding, monster slaying, EXP earning, level raising RPG because they get frustrated at not being able to program any of the things they want their game to have. It\'d5s a sad fact that this problem is usually caused by people being impatient, and quite often lazy.\
+\
+The golden rule to remember is: start small. The reason why people can\'d5t program their super cool 100mb RPG right away on day one is simply that they don\'d5t know enough about programming. Get experience by making a few small games before you attempt the next World of Warcraft, and get used to the application you\'d5re using to create them with. (in this case Mac GameMaker, and it couldn\'d5t be a better choice)\
+\
+I myself rushed into RPG designing the moment I got my hands on my first game editor years and years ago. I didn\'d5t understand anything about programming so the game was a complete flop! However I continued searching for and downloading game editors, hoping that one of them would do for what I wanted. Little did I know that any one of them would have done for what I wanted. The problem was that I was trying to find a magic editor that would put everything I wanted into the game for me at the click of a few buttons, when what I 
+\f4\i should
+\f1\i0  have been doing was learning programming.\
+\
+Programming isn\'d5t that hard to learn at all, in fact provided you\'d5ve got a good language (like Mac GameMaker\'d5s) it\'d5s quite simple. Once you know the rules that apply to it you can make pretty much any kind of game you like! This guide will help you get started creating your own RPG, but before you continue I advise you to spend a few days or a week getting used to Mac GameMaker\'d5s programming language. Make a few small games, get to know a few of the commands and variables, and what a variable 
+\f4\i is
+\f1\i0 , hehe. Don\'d5t worry, I\'d5ll wait for you...\
+\
+\
+
+\f3\b\fs36 Tutorial On Mac GameMaker's Language
+\f1\b0\fs28 \
+\
+Although I've just told you to spend a few days getting used to Mac GameMaker's language, I'm guessing that you'll be too impatient to do so. (sigh...) As I've already mentioned, impatience can lead to frustration, and frustration can lead to giving up. To help prevent this, here's a quick rundown on how the language works. (anyone who knows how to use variables can skip this section)\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b \cf0 Variables\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 The whole language centers around variables. A variable is a letter or a word that has an assigned value. To assign a variable the value of a 
+\f4\i number
+\f1\i0 , you would type the following:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 gold = 50\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+That would make the variable "gold" equal "50". To assign a variable the value of a 
+\f4\i word
+\f1\i0 , you would type the following:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 name$ = "Silverwind"\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+That would make the variable "name$" equal "Silverwind". Notice the $ sign at the end of the variable's name? That's required when assigning a variable the value of a 
+\f4\i word
+\f1\i0  but not a number.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b \cf0 Printing Values\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 \
+When you want to print the value of a variable, type the variable you want to print and incase it with $ marks. Like this:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 PRINT $gold$\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+Because I've assigned "gold" a value of "50" earlier, the above line of code will print "50".\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 PRINT $name$$\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+Because I've assigned "name$" the value of "Silverwind" earlier, the above line of code will print "Silverwind". The same method is used to print values in 
+\f4\i any
+\f1\i0  print form. These lines work as well:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 ALERT You have $gold$ Gold.\cf0 \
+\
+\cf2 POPFIELD My name is $name$$\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+Well, that's about it for variables. Simple eh? But before we go on, I still strongly advise you to spend a few days making small non-RPG games if you haven't done so already. Whenever you're up for it, move on to the next section.\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b\fs36 \cf0 Getting Started
+\f1\b0\fs28 \
+\
+Ok, so now that you now what variables are and how to use them, we can start making an RPG! To start off you'll need to have a vague idea of what you want to include in your game, and the trick is: start small. You can always add to it later on, but there's no point running a marathon before you learn to walk, meaning it's best to keep the overall goal for your first RPG simple. I recommend starting with the battle engine, as it's the foundry of most RPGs.\
+\
+\
+
+\f3\b\fs36 Your First Battle Engine
+\f1\b0\fs28 \
+\
+The battle engine is a great place to start. Let's say that the goal for your first battle engine is to have a player character and an enemy, each with their own HP, (Hit Points) and an Attack button that makes them attack each other. Ok, so create a new game in Mac GameMaker (GM as we'll now refer to it) and select a Card layout that includes a text field. In the button script of the Begin Game button on Card 1, create variables for both the player and the enemy's HP. Like this:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 playerHP = 30\
+enemyHP = 25\cf0 \
+\
+Now go to Card 2 and enter this in the Card script:\
+\
+\cf2 CLEAR TEXT\cf0 \
+\cf2 PRINT Player HP: $playerHP$\
+PRINT Enemy HP: $enemyHP$\cf0 \
+\
+(the "CLEAR TEXT" line isn't necessary because the text field will usually be blank when the card loads, but I add it anyway incase I leave a note to myself in the text field in the editor) So now when Card 2 loads the screen should read "PlayerHP: 30 EnemyHP: 25". What's that I hear you say? "Cool"? You're right, it is cool, but what good are HP if you can't do anything with them? Let's create an Attack button so that the player and the enemy can damage each other! Create a button and call it "Attack" or "Fight" or whatever you want, and put the following code in it:\
+\
+\cf2 damage = RANDOM 5\
+enemyHP = enemyHP - damage\cf0 \
+\
+That will make the player attack the enemy, so lets add a bit more code and make the enemy attack the player afterwards.\
+\
+\cf2 damage = RANDOM 5\
+playerHP = playerHP - damage\cf0 \
+\
+Now that damage has been done to the HP of both the player and the enemy, lets tell the computer to print the updated values of their HP.\
+\
+\cf2 CLEAR TEXT\
+PRINT Player HP: $playerHP$\
+PRINT Enemy HP: $enemyHP$\cf0 \
+\
+Coolaboola! Now when you click the Attack button the player and the enemy damage each other and the new HP are printed! Awesome!!! But wait... uh oh, look at what happens if you click the Attack button over and over again: the HP drop to a value below 0! Not a problem, we'll add a few lines of code to tell the computer that if the HP of a character reaches 0 we want that character to die! (Nothing personal, but we can't have a load of "less then 0 HP" people running around in our game) Ok, here's what to do. Under the line that says "enemyHP = enemyHP - damage" type:\
+\
+\cf2 IF enemyHP < 1 THEN\
+  ALERT You have defeated the enemy! Hurray!\
+  GOTOCARD 1\
+END IF\cf0 \
+\
+Now make a similar block of code and put it under the line that says "playerHP = playerHP - damage"\
+\
+\cf2 IF playerHP < 1 THEN\
+  ALERT You have been defeated...\
+  GOTOCARD 1\
+END IF\cf0 \
+\
+Take a moment to step back and gaze at your creation... gasp! You have achieved your goal! You have made a player character and an enemy BOTH with HP, and you can make them damage each other by clicking the Attack button! Congratulations, you've programmed a simple battle engine! By changing the values of "damage", "playerHP" and "enemyHP" you can make the player and enemy's attack stronger or weaker. Coooooool! When you're ready to build a slightly more flexible battle engine, move on to the next section.\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b\fs36 \cf0 Basic Battle Engine
+\f1\b0\fs28 \
+\
+Now that you've programmed your first battle engine, lets try building one that's slightly more flexible. You'll probably notice the code to be much the same as the last, but this one will use a minimum of 3 Cards and will be easier to import new features into. Ok, so just like with our first battle engine the player's stats have to be set 
+\f4\i before
+\f1\i0  they enter a battle. (the Begin Game button on Card 1 is probably the best place to set them) The following Cards will be used:\
+\
+\'a5	Player's Turn Card.\
+\'a5	Enemy's Turn Card.\
+\'a5	Game Over Card.\
+\
+You can work on any Cards you like, but for this tutorial we'll say that we're working on Cards 2 and 3. Enter this in the Card script on Card 2. (the Player's Turn Card)\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 \
+CLEAR TEXT\
+PRINT \cf3 stats\cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+Now create an Attack button and enter this in it's script:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 playerhit = RANDOM \cf3 damage amount\cf2 \
+enemyHP = enemyHP - playerhit\
+\
+CLEAR TEXT\
+PRINT \cf3 stats\cf2 \
+\
+IF enemyHP < 1 THEN\
+  ALERT You have defeated the enemy! Hurray!\
+  GOTOCARD \cf3 Victory Card\cf2 \
+ELSE\
+  GOTOCARD \cf3 Enemy's Turn Card\cf2 \
+END IF\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 Now go to Card 3 (the Enemy's Turn Card) and enter this in the Card script:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 enemyhit = RANDOM \cf3 damage amount\cf2 \
+playerHP = playerHP - enemyhit\
+\
+CLEAR TEXT\
+PRINT \cf3 stats\cf2 \
+\
+IF playerHP < 1 THEN\
+  ALERT You have been defeated...\
+  GOTOCARD \cf3 Game Over Card\cf2 \
+ELSE\
+  GOTOCARD \cf3 Player's Turn Card\cf2 \
+END IF\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 Notice how I've replaced "damage" with "playerhit" and "enemyhit"? This is so that you can reference the strength of the player's attack and the enemy's attack separately if you ever need to. (although it's unlikely that you ever will) You can change these variables to whatever you like. You might prefer "playerdamage" or "playerD". I personally always use "playerhit" though. Finally, notice how Card 4 is loaded when the player is defeated? That's because Card 4 will serve as our Game Over Card. You don't need much code on that Card, just draw a game over picture and make a button that goes back to Card 1 or quits the game.\
+\
+Well, there you have it, a basic battle engine! You can add to it with some of the code snippets from the RPG Code Resources section found at the back of this guide, or modify it with your own code.\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b\fs36 \cf0 More Than Just Code
+\f1\b0\fs28 \
+\
+Ok, once you've got the hand of programming you'll need to sit yourself down and consider the other aspects of your RPG, and one of the most important things to consider is the quest/story line. Having a plot or event take place at the 
+\f4\i beginning
+\f1\i0  of an RPG is the most common way of setting the scene for the player. The great thing about the story line is that it's entirely up to you. You can take pretty much any random idea that comes into your head and build a game around it! Many people create really big story lines for their RPG, with dozens of characters and "complications" to detail it. But there are others (like myself) who prefer to go with a simple theme. Here's examples of the two most common types of story line:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b \cf0 Character Centered\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 Many story lines center around a single character, who's allegiance plays an important role in the goal of the game. For example, if the character's a good guy it might be a princess who gets kidnapped, the goal of the game being to rescue her. Or if the character's a bad guy, it might be a corrupt king or an evil wizard, the goal of the game being to overthrow his rule on the realm.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b \cf0 Item Centered\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 Another common theme is to center the story line around an item or artifact of immense power. (the Sword of the Legendary Crusader, the Amulet of Destruction, the Ring of Darkness etc.) As with character centered story lines, the item's alignment plays an important role on the game's goal. If the item serves an evil purpose, the player's goal might be to find and destroy the item before the enemy can use it. On the other hand, if the item serves a good purpose the player's goal might be to find and use it 
+\f4\i against
+\f1\i0  the enemy. In this theme the item is often broken into several pieces or shards, meaning that the player has to journey all over the realm locating and retrieving the pieces before combining them and using the restored item to overthrow the central villain.\
+\
+There are many more story line themes, but the two above are the most common. Here's an example story line that uses elements of both themes: "The evil wizard Zelderof has risen in power once more and is taking over the land with his army of undead minions! Only 
+\f4\i you
+\f1\i0  can bring an end to his plans by retrieving all 7 pieces of the legendary Amulet of Light and ridding the world of the wizard's unholy existence!"\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b\fs36 \cf0 RPG Code Resources:
+\f1\b0\fs28 \
+\
+Most of the following codes require the Basic Battle Engine to execute correctly. I've listed them in alphabetical order but you can add as many or as little of them to your RPG as you want without any specific order. (with the exception of certain codes which require the combined use of other codes to execute correctly)\
+
+\f3\b\fs36 \
+\
+Escape Battle Button
+\fs28 \
+\
+Requirements:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 \'a5 Basic Battle engine.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b \cf0 \'a5
+\f1\b0  "battlereturn" variable. (see Random Enemy Encounters)\
+\
+Create an Escape or Run Away button on the Player's Turn Card in the battle engine and enter this in the button script:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 escapechance = RANDOM 100\
+IF escapechance > \cf3 chance of escaping\cf2  THEN\
+  ALERT You escape the enemy...\
+  GOTOCARD \cf3 \
+\cf2 ELSE\
+  ALERT You can't escape!\
+  GOTOCARD battlereturn\
+END IF
+\f3\b \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\fs36 \cf0 \
+\
+EXP and LV's (experience points and player levels)
+\fs28 \
+\
+Requirements:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 \'a5 Basic Battle Engine\
+\'a5 Random Enemy Encounters\
+\
+Create an EXP Award Card that's accessed whenever an enemy is defeated in battle and enter this in the Card script:\cf2 \
+\
+gold = gold + enemydropgold\
+IF gold > 30000 THEN gold = 30000\
+playerEXP = playerEXP + enemyEXPvalue\
+IF playerEXP > 30000 THEN playerEXP = 30000\
+ALERT You have defeated the enemy and gained $enemyEXPvalue$ EXP and $enemydropgold$ gold!\
+\
+IF playerEXP > \cf3 level 2 requirement\cf2  THEN newLV = 2\
+IF playerEXP > \cf3 level 3 requirement\cf2  THEN newLV = 3\
+IF playerEXP > \cf3 level 4 requirement\cf2  THEN newLV = 4\
+IF playerEXP > \cf3 level 5 requirement\cf2  THEN newLV = 5\
+\
+IF newLV > playerLV THEN\
+  HPup = RANDOM \cf3 HP increase amount\cf2 \
+  maxHP = maxHP + HPup\
+  IF maxHP > 30000 THEN maxHP = 30000\
+  playerHP = playerHP + HPup\
+  IF playerHP > maxHP THEN playerHP = maxHP\
+  ALERT You have reached level $newLV$! Your HP increased by $HPup$.\
+  playerLV = newLV\
+END IF\
+\
+GOTOCARD battlereturn\
+\cf0 \
+Now edit the enemy information blocks on the Enemy Encounter Card to contain the following lines:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 enemyEXPvalue =\cf3  enemy's EXP value\cf2 \
+enemydropgold = \cf3 enemy's carried gold\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b\fs36 \cf0 \
+\
+Healing Potions
+\fs28 \
+\
+Requirements:\
+\'a5
+\f1\b0  
+\f4\i None.
+\f1\i0 \
+\
+Create a Use Heal Potion button and enter this in the button script:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 \
+IF healpotions > 0 THEN\
+  healpotions = healpotions - 1\
+  healamount = RANDOM \cf3 heal amount\cf2 \
+  healamount = healamount + \cf3 heal plus\cf2 \
+  playerHP = playerHP + healamount\
+  IF playerHP > maxHP THEN playerHP = maxHP\
+  ALERT You've been healed $healamount$ HP!\
+ELSE\
+  ALERT You have no Heal Potions.\
+END IF\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b\fs36 \cf0 \
+\
+Items
+\fs28 \
+\
+Requirements:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 \'a5 
+\f4\i None.
+\f1\i0 \
+\
+Create an Items Card with buttons representing the names of each item the player can use, then enter this in each button script:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 IF \cf3 item name\cf2  > 0 THEN\
+  \cf3 item name\cf2  = \cf3 item name\cf2  - 1\
+  \cf3 item effect\cf2 \
+  ALERT You've used a \cf3 item name\cf2 \
+ELSE\
+  ALERT You have no \cf3 item name\cf2 \
+END IF\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b\fs36 \cf0 \
+\
+Items (in battle)
+\fs28 \
+\
+Requirements:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 \'a5 Basic Battle Engine
+\f3\b \
+\'a5
+\f1\b0  "battlereturn" variable. (see Random Enemy Encounters)\
+\'a5 Items\
+\
+To have items usable in battle, create a Back button on the Items Card and have it link to the battle Card. Now Create a button on your Battle Card called Use Item and have it link to the Items Card.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b\fs36 \cf0 \
+\
+Player Attributes
+\fs28 \
+\
+Requirements:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 \'a5 
+\f4\i None.
+\f1\i0 \
+\
+Create an Attribute Distribution Card with buttons representing the names of each attribute in the game, then enter this in each attribute's button script:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 IF totalpoints > 0 THEN\
+  \cf3 attribute\cf2  = \cf3 attribute\cf2  + 1\
+  totalpoints = totalpoints - 1\
+ELSE\
+  ALERT You have used up all of your attribute points!\
+END IF\
+\
+CLEAR\
+PRINT Remaining Attribute Points: $totalpoints$\
+PRINT\
+PRINT \cf3 attribute 1\cf2 : $\cf3 attribute 1\cf2 $\
+PRINT \cf3 attribute 2\cf2 : $\cf3 attribute 2\cf2 $\
+PRINT \cf3 attribute 3\cf2 : $\cf3 attribute 3\cf2 $\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+Enter this in the Card script:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 totalpoints =\cf3  total amount of attribute points\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf3 attribute 1\cf2  = 0\
+\cf3 attribute 2\cf2  = 0\
+\cf3 attribute 3\cf2  = 0\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 CLEAR\
+PRINT Remaining Attribute Points: $totalpoints$\
+PRINT\
+PRINT \cf3 attribute 1\cf2 : $\cf3 attribute 1\cf2 $\
+PRINT \cf3 attribute 2\cf2 : $\cf3 attribute 2\cf2 $\
+PRINT \cf3 attribute 3\cf2 : $\cf3 attribute 3\cf2 $\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+Create a Reset button and enter this in it's script:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 totalpoints =\cf3  total amount of attribute points\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf3 attribute 1\cf2  = 0\
+\cf3 attribute 2\cf2  = 0\
+\cf3 attribute 3\cf2  = 0\
+\
+CLEAR\
+PRINT Remaining Attribute Points: $totalpoints$\
+PRINT\
+PRINT \cf3 attribute 1\cf2 : $\cf3 attribute 1\cf2 $\
+PRINT \cf3 attribute 2\cf2 : $\cf3 attribute 2\cf2 $\
+PRINT \cf3 attribute 3\cf2 : $\cf3 attribute 3\cf2 $\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+Now create a Finished button and enter this in it's script:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf3 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 IF totalpoints = 0 THEN\
+  ALERT You have finished assigning all of your attribute points.\
+  GOTOCARD \cf3 game start Card\
+\cf2 ELSE\
+  ALERT You haven't finished assigning all of your attribute points.\
+END IF
+\f3\b\fs36 \cf0 \
+\
+\
+Player Classes
+\fs28 \
+\
+Requirements:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 \'a5 
+\f4\i None.
+\f1\i0 \
+\
+Create a Choose Player Class Card with buttons representing the names of each class the player can select, then enter this in each button script:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 playerclass$ = "\cf3 class name\cf2 "\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+When you want to have a button's code execute only when a player is of a specific class, enter this in the button script:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 IF playerclass$ = "\cf3 class name\cf2 " THEN\
+  \cf3 class limited code\cf2 \
+ELSE\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf3   \cf2 ALERT You need to be a \cf3 class name \cf2 to do this.\
+END IF\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+Here's an example class limited event: (placed in the Cast Spell button in the battle engine)\cf2 \
+\
+IF playerclass$ = "Wizard" THEN\
+  GOTOCARD \cf3 Spell Select Card\cf2 \
+ELSE\
+  ALERT You are not a Wizard! Only Wizards can cast spells!\
+END IF
+\f3\b\fs36 \cf0 \
+\
+\
+Player Status
+\fs28 \
+\
+Requirements:\
+
+\f1\b0 \'a5 
+\f4\i None.
+\f1\i0 \
+\
+Create a variable named "playerstatus$" and appropriately place this code into your game: (placement varies on the nature of the status effect)\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 IF playerstatus$ = "\cf3 status\cf2 " THEN\
+  \cf3 status effect\cf2 \
+END IF\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+Here's an example status: (this code is placed at the beginning of the Attack button in the battle engine)\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 IF playerstatus$ = "Asleep" THEN\
+  awakechance = RANDOM 5\
+  IF awakechance = 1 THEN\
+    playerstatus$ = "Normal"\
+    ALERT You wake up!\
+  ELSE\
+    ALERT You are fast asleep...\
+    GOTOCARD \cf3 Enemy's Turn Card\
+  \cf2 END IF\
+END IF\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b\fs36 \cf0 \
+\
+Random Enemy Encounters
+\fs28 \
+\
+Requirements:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 \'a5 Basic Battle Engine\
+\
+Create an Encounter Card and enter this in the Card script:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 \
+battlereturn = RECENTCARD\
+enemyselect = RANDOM\cf3  number of encounterable enemies\
+\
+\cf2 IF enemyselect = \cf3 enemy number\cf2  THEN\
+  \cf3 enemy stats\
+\cf2 END IF\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 Here's an example Encounter Card script: (the variables "enemyEXPvalue" and "enemydropgold" are for use with the "EXP and LV's" code)\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 battlereturn = RECENTCARD\
+enemyselect = RANDOM 3\cf3 \
+\
+\cf2 IF enemyselect = 1 THEN\
+  enemyname$ = "Goblin"\
+  enemyHP = 10\
+  enemyEXPvalue = 5\
+  enemydropgold = RANDOM 5\cf3 \
+\cf2 END IF\cf3 \
+\
+\cf2 IF enemyselect = 1 THEN\
+  enemyname$ = "Troll"\
+  enemyHP = 25\
+  enemyEXPvalue = 20\
+  enemydropgold = RANDOM 15\cf3 \
+\cf2 END IF\cf3 \
+\
+\cf2 IF enemyselect = 1 THEN\
+  enemyname$ = "Dragon"\
+  enemyHP = 50\
+  enemyEXPvalue = 80\
+  enemydropgold = RANDOM 30\cf3 \
+\cf2 END IF\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 Enter this in the Card script of each Card you want to have a chance of encountering an enemy on:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 encounterchance = RANDOM \cf3 chance of encountering an enemy\cf2 \
+IF encounterchance = 1 THEN GOTOCARD \cf3 Encounter Card\cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b\fs36 \cf0 \
+\
+Shops
+\fs28 \
+\
+Requirements:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 \'a5 
+\f4\i None.
+\f1\i0 \
+\
+Create a Shop Card with buttons representing the names of each item the player can buy, then enter this in each button script:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 IF gold > \cf3 item price - 1\cf2  THEN\
+  \cf3 item\cf2  = \cf3 item\cf2  + 1\
+  gold = gold - \cf3 item price\cf2 \
+  ALERT You purchase a \cf3 item\cf2  for \cf3 item price\cf2  gold.\
+ELSE\
+  ALERT You don't have enough gold!\
+END IF\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b\fs36 \cf0 \
+\
+Spells
+\fs28 \
+\
+Requirements:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 \'a5 Basic Battle Engine
+\f3\b \
+\'a5
+\f1\b0  "battlereturn" variable. (see Random Enemy Encounters)\
+\
+Create a Spells Card with buttons representing the names of each spell the player can select, then enter this in each button script:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 spell$ = "\cf3 spell name\cf2 "\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+Create a Back button on the Spells Card and have it link to the Battle Card. Create a Select Spell button on the Battle Card and have it link to the Spells Card. Now create a Cast Spell button on the Battle Card and enter this in it's script:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 IF spell$ = "" THEN\
+  ALERT You don't have a spell selected!\
+END IF\
+\
+IF spell$ = "\cf3 spell name\cf2 " THEN\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf3     spell effect\cf2 \
+END IF\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 If a spell has a HP damaging effect, put \cf2 spelldamage = 1 \cf0 at the end of it's effect. Here's an example spell:\cf2 \
+\
+IF spell$ = "fire ball" THEN\
+  playerhit = RANDOM 8\
+  playerhit = playerhit + 2\
+  spelldamage = 1\
+END IF\
+\
+\cf0 Next add this block:\cf2 \
+\
+IF spelldamage = 1 THEN\
+  enemyHP = enemyHP - playerhit\
+  ALERT Your spell hits the enemy for $playerhit$ damage!\
+END IF\
+\
+CLEAR TEXT\
+PRINT \cf3 stats\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 IF enemyHP < 1 THEN\
+  ALERT You have defeated the enemy!\
+  GOTOCARD \cf3 Victory Card\cf2 \
+ELSE\
+  GOTOCARD \cf3 Enemy's Turn Card\cf2 \
+END IF\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b\fs36 \cf0 \
+\
+Treasure Chests
+\fs28 \
+\
+Requirements:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 \'a5 
+\f4\i None.
+\f1\i0 \
+\
+Create an Open Chest button and enter this in the button script:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 IF chestempty = 0 THEN\
+  chestempty = 1\
+  chestgold = \cf3 amount of gold in treasure chest\
+\cf2   gold = gold + chestgold\
+  ALERT You found $chestgold$ gold in the treasure chest!\
+ELSE\
+  ALERT The treasure chest is empty.\
+END IF\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f3\b\fs36 \cf0 \
+\
+Weapons and Armor
+\fs28 \
+\
+Requirements:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f1\b0 \cf0 \'a5 Basic Battle Engine\
+\
+Enter this in the Player's Turn Card script in the battle engine:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 playerhit = RANDOM \cf3 base weapon damage\cf0 \
+\cf2 IF playerweapon$ = "\cf3 weapon\cf2 " THEN playerhit = playerhit + \cf3 weapon strength\cf2 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 The code for armor is very similar to weapons. Enter this after the above code:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 IF playerarmor$ = "\cf3 armor\cf2 " THEN enemyhit = enemyhit - \cf3 armor strength\cf2 \
+IF enemyhit < 0 THEN enemyhit = 0\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+Here are example weapon and armor blocks:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 playerhit = RANDOM 5\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 IF playerweapon$ = "Sword" THEN playerhit = playerhit + 10\
+IF playerweapon$ = "Long Bow" THEN playerhit = playerhit + 15\
+IF playerweapon$ = "Magic Staff" THEN playerhit = playerhit + 20\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf2 IF playerarmor$ = "Leather Vest" THEN enemyhit = enemyhit - 5\
+IF playerarmor$ = "Plate Mail" THEN enemyhit = enemyhit - 10\
+IF playerarmor$ = "Dragon Hide" THEN enemyhit = enemyhit - 15\
+\
+IF enemyhit < 0 THEN enemyhit = 0\
+enemyHP = enemyHP - playerhit}

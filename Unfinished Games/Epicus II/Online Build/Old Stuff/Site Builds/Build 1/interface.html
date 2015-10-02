@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Epicus Online: Interface Concept</title>
+<style type="text/css">
+<!--
+#apDiv1 {
+	position:absolute;
+	left:5px;
+	top:5px;
+	width:645px;
+	height:645px;
+	z-index:1;
+}
+#apDiv2 {
+	position:absolute;
+	left:670px;
+	top:85px;
+	width:200px;
+	height:20px;
+	z-index:2;
+	width: 65px;
+}
+#apDiv3 {
+	position:absolute;
+	left:800px;
+	top:85px;
+	width:65px;
+	height:20px;
+	z-index:3;
+}
+#apDiv4 {
+	position:absolute;
+	left:670px;
+	top:5px;
+	width:250px;
+	height:60px;
+	z-index:4;
+}
+#apDiv5 {
+	position:absolute;
+	left:780px;
+	top:260px;
+	width:120px;
+	height:20px;
+	z-index:5;
+}
+#apDiv6 {
+	position:absolute;
+	left:672px;
+	top:260px;
+	width:80px;
+	height:20px;
+	z-index:6;
+}
+#apDiv7 {
+	position:absolute;
+	width:250px;
+	height:250px;
+	z-index:7;
+	left: 670px;
+	top: 205px;
+}
+#apDiv8 {
+	position:absolute;
+	left:670px;
+	top:125px;
+	width:65px;
+	height:20px;
+	z-index:8;
+}
+#apDiv9 {
+	position:absolute;
+	left:670px;
+	top:150px;
+	width:65px;
+	height:20px;
+	z-index:9;
+}
+#apDiv10 {
+	position:absolute;
+	left:670px;
+	top:175px;
+	width:65px;
+	height:20px;
+	z-index:10;
+}
+#apDiv11 {
+	position:absolute;
+	left:800px;
+	top:125px;
+	width:65px;
+	height:20px;
+	z-index:11;
+}
+#apDiv12 {
+	position:absolute;
+	left:800px;
+	top:150px;
+	width:65px;
+	height:20px;
+	z-index:12;
+}
+#apDiv13 {
+	position:absolute;
+	left:800px;
+	top:175px;
+	width:65px;
+	height:20px;
+	z-index:13;
+}
+#apDiv14 {
+	position:absolute;
+	left:670px;
+	top:200px;
+	width:65px;
+	height:20px;
+	z-index:14;
+}
+#apDiv15 {
+	position:absolute;
+	left:800px;
+	top:200px;
+	width:65px;
+	height:20px;
+	z-index:15;
+}
+#apDiv16 {
+	position:absolute;
+	left:740px;
+	top:125px;
+	width:50px;
+	height:20px;
+	z-index:16;
+}
+#apDiv17 {
+	position:absolute;
+	left:740px;
+	top:150px;
+	width:50px;
+	height:20px;
+	z-index:17;
+}
+#apDiv18 {
+	position:absolute;
+	left:740px;
+	top:175px;
+	width:50px;
+	height:20px;
+	z-index:18;
+}
+#apDiv19 {
+	position:absolute;
+	left:740px;
+	top:200px;
+	width:50px;
+	height:20px;
+	z-index:19;
+}
+#apDiv20 {
+	position:absolute;
+	left:870px;
+	top:125px;
+	width:50px;
+	height:20px;
+	z-index:20;
+}
+#apDiv21 {
+	position:absolute;
+	left:870px;
+	top:150px;
+	width:50px;
+	height:20px;
+	z-index:21;
+}
+#apDiv22 {
+	position:absolute;
+	left:870px;
+	top:175px;
+	width:50px;
+	height:20px;
+	z-index:22;
+}
+#apDiv23 {
+	position:absolute;
+	left:870px;
+	top:200px;
+	width:50px;
+	height:20px;
+	z-index:23;
+}
+#apDiv24 {
+	position:absolute;
+	left:740px;
+	top:85px;
+	width:50px;
+	height:20px;
+	z-index:24;
+}
+#apDiv25 {
+	position:absolute;
+	left:870px;
+	top:85px;
+	width:50px;
+	height:20px;
+	z-index:25;
+}
+#apDiv26 {
+	position:absolute;
+	left:670px;
+	top:350px;
+	width:250px;
+	height:20px;
+	z-index:26;
+}
+#apDiv27 {
+	position:absolute;
+	left:670px;
+	top:260px;
+	width:100px;
+	height:20px;
+	z-index:27;
+}
+#apDiv28 {
+	position:absolute;
+	left:670px;
+	top:320px;
+	width:250px;
+	height:20px;
+	z-index:28;
+}
+#apDiv29 {
+	position:absolute;
+	left:670px;
+	top:410px;
+	width:240px;
+	height:20px;
+	z-index:29;
+	background-color: #FFCCFF;
+}
+#apDiv30 {
+	position:absolute;
+	left:670px;
+	top:440px;
+	width:240px;
+	height:140px;
+	z-index:30;
+	background-color: #FFCCFF;
+}
+-->
+</style>
+</head>
+
+<body>
+<div id="apDiv1" style="background-image:url(images/Room.png); background-repeat:no-repeat;"></div>
+<div id="apDiv2">  HP</div>
+<div class="StatText1" id="apDiv3">MP</div>
+<div id="apDiv4" style="background-image:url(images/Logo.gif); background-repeat:no-repeat;"></div>
+
+<div id="apDiv8">Strength</div>
+<div id="apDiv9">Wisdom</div>
+<div id="apDiv10">Dexterity</div>
+<div id="apDiv11">Attack</div>
+<div id="apDiv12">Defence</div>
+<div id="apDiv13">Accuracy</div>
+<div id="apDiv14">Charisma</div>
+<div id="apDiv15">Evasion</div>
+<div id="apDiv16">11</div>
+<div id="apDiv17">9</div>
+<div id="apDiv18">13</div>
+<div id="apDiv19">10</div>
+<div id="apDiv20">7</div>
+<div id="apDiv21">5</div>
+<div id="apDiv22">45</div>
+<div id="apDiv23">60</div>
+<div id="apDiv24">27</div>
+<div id="apDiv25">4</div>
+
+
+<!--<hr style="position:absolute; left:670px; top:105px" width=250>-->
+<hr style="position:absolute; left:670px; top:230px" width=250>
+<hr style="position:absolute; left:670px; top:293px" width=250>
+<hr style="position:absolute; left:670px; top:383px" width=250>
+
+<div id="apDiv6">
+  <input type="submit" name="castSpell" id="castSpell" value="Cast" style="width:80px"/>
+</div>
+<div id="apDiv5">
+  <select name="spellMenu" id="spellMenu" style="width:140px">
+    <option>Magic Missile</option>
+    <option>Light</option>
+    <option>Protection</option>
+    <option>Detect Magic</option>
+  </select>
+</div>
+<div id="apDiv26">
+  <input type="submit" name="useItem" id="useItem" value="Use" style="width:80px"/>
+  <input type="submit" name="unequipItem" id="unequipItem" value="Unequip" style="width:80px"/>
+  <input type="submit" name="dropItem" id="dropItem" value="Drop" style="width:80px"/>
+ 
+</div>
+<div id="apDiv28">
+  <select name="itemMenu" id="itemMenu" style="width:250px">
+    <option>Rusty Dagger</option>
+    <option>Potion of Healing</option>
+    <option>Wooden Shield</option>
+  </select>
+</div>
+<div id="apDiv29" style="padding:5px;">Examine:</div>
+<div id="apDiv30" style="padding:5px;">You find nothing of interest here.</div>
+</body>
+</html>

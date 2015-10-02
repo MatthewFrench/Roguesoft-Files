@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+	
+	<head>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>Legendary Sword</title>
+		
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		
+		<link href="textStyles.css" rel="stylesheet" type="text/css" />
+		
+		<link href="interfaceStyles.css" rel="stylesheet" type="text/css" />
+		
+		<script language="javascript" src="rogueScriptCommandLibrary.js"></script>
+		
+		<script language="javascript" src="gameFunctions.js"></script>
+		
+	</head>
+	
+	<body onkeydown = "handleKeydown (event)">
+		
+		<div id="masterDiv">
+			
+			<div id="gameField">
+				
+				
+				
+				
+				
+				<div id="titleScreen"></div>
+				
+				
+				
+				
+				
+				<div id="overworldScreen">
+					
+					<div id="gridField">
+						
+						<div id="roomDiv"></div>
+						
+						<div id="playerDiv" class="entityDiv">
+							
+							<img id="playerImg" class="entityImg">
+							
+						</div>
+						
+						<!--
+						
+						<div id="enemy1Div" class="entityDiv">
+							
+							<img id="enemy1Img" class="entityImg">
+							
+						</div>
+						
+						-->
+						
+					</div>
+					
+					<div id="statField"></div>
+					
+				</div>
+				
+			</div>
+			
+			<div id="musicField">
+				
+				<object
+				classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+				codebase="http://www.apple.com/qtactivex/qtplugin.cab"
+				width="400"
+				height="16"
+				>
+				
+				<param
+					name="src"
+					value="music/songOfTheSword.mp3"
+				>
+				
+				<param
+					name="autoplay"
+					value="true"
+				>
+				
+				<param
+					name="type"
+					value="video/quicktime"
+					width="400"
+					height="16"
+				>
+				
+				<embed
+				src="music/songOfTheSword.mp3"
+				width="400"
+				height="16"
+				autoplay="true"
+				loop="true"
+				type="video/quicktime"
+				pluginspage="http://www.apple.com/quicktime/download/"
+				>
+					
+				</embed>
+				
+				</object>
+				
+			</div>
+			
+			
+			
+			
+<!--
+			<div id="sandBox">
+				
+				<input
+					id="SBButton1"
+					type="button"
+					value="Hide"
+					onClick="
+						userAsk = prompt('Enter an element ID:', '');
+						hideElement(userAsk);
+					"
+				>
+				
+				<input
+					id="SBButton2"
+					type="button"
+					value="Show"
+					onClick="
+						userAsk = prompt('Enter an element ID:', '');
+						showElement(userAsk);
+					"
+				>
+				
+				<input
+					id="SBButton3"
+					type="button"
+					value="Prompt Input"
+					onClick="
+						playerName = prompt('Enter your name:', 'Roguesoft Explorer');
+						changeElementValue('SBTextField', 'Your name is ' + playerName + '!');
+					"
+				>
+				
+				<input
+					id="SBButton2"
+					type="button"
+					value="Move Element"
+					onClick="
+						userAsk1 = prompt('Element to move:', '');
+						userAsk2 = prompt('x value:', '');
+						userAsk3 = prompt('y value:', '');
+						userAsk2 = userAsk2 + 'px';
+						userAsk3 = userAsk3 + 'px';
+						moveElement (userAsk1, userAsk2, userAsk3);
+					"
+				>
+				
+				<br></br>
+				
+				<br></br>
+				
+				<textarea id="SBTextField">Enter some text...</textarea>
+				
+			</div>
+-->
+			
+			
+			
+			
+		</div>
+		
+		<script language="javascript" src="game.js"></script>
+		
+	</body>
+	
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Realm Race</title>
+<style type="text/css">
+<!--
+#apDiv1 {
+	position:absolute;
+	/*left:50%;
+	margin-left:-495px;*/
+	left:0px;
+	top:0px;
+	width:980px;
+	height:681px;
+	z-index:1;
+}
+#apDiv2 {
+	position:absolute;
+	left:10px;
+	top:10px;
+	width:749px;
+	height:661px;
+	z-index:2;
+}
+
+
+
+#apDiv3 {
+	position:absolute;
+	left:790px;
+	top:50px;
+	width:180px;
+	height:110px;
+	z-index:3;
+}
+#apDiv4 {
+	position:absolute;
+	left:0px;
+	top:50px;
+	width:60px;
+	height:60px;
+	z-index:4;
+}
+#apDiv5 {
+	position:absolute;
+	left:60px;
+	top:50px;
+	width:60px;
+	height:60px;
+	z-index:4;
+}
+#apDiv6 {
+	position:absolute;
+	left:120px;
+	top:50px;
+	width:60px;
+	height:60px;
+	z-index:4;
+}
+.style1 {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+
+
+#apDiv7 {
+	position:absolute;
+	left:790px;
+	top:200px;
+	width:180px;
+	height:110px;
+	z-index:3;
+}
+#apDiv8 {
+	position:absolute;
+	left:0px;
+	top:50px;
+	width:60px;
+	height:60px;
+	z-index:4;
+}
+#apDiv9 {
+	position:absolute;
+	left:60px;
+	top:50px;
+	width:60px;
+	height:60px;
+	z-index:4;
+}
+#apDiv10 {
+	position:absolute;
+	left:120px;
+	top:50px;
+	width:60px;
+	height:60px;
+	z-index:4;
+}
+
+
+
+#apDiv11 {
+	position:absolute;
+	left:790px;
+	top:350px;
+	width:180px;
+	height:110px;
+	z-index:3;
+}
+#apDiv12 {
+	position:absolute;
+	left:0px;
+	top:50px;
+	width:60px;
+	height:60px;
+	z-index:4;
+}
+#apDiv13 {
+	position:absolute;
+	left:60px;
+	top:50px;
+	width:60px;
+	height:60px;
+	z-index:4;
+}
+#apDiv14 {
+	position:absolute;
+	left:120px;
+	top:50px;
+	width:60px;
+	height:60px;
+	z-index:4;
+}
+
+
+
+#apDiv15 {
+	position:absolute;
+	left:790px;
+	top:500px;
+	width:180px;
+	height:110px;
+	z-index:3;
+}
+#apDiv16 {
+	position:absolute;
+	left:0px;
+	top:50px;
+	width:60px;
+	height:60px;
+	z-index:4;
+}
+#apDiv17 {
+	position:absolute;
+	left:60px;
+	top:50px;
+	width:60px;
+	height:60px;
+	z-index:4;
+}
+#apDiv18 {
+	position:absolute;
+	left:120px;
+	top:50px;
+	width:60px;
+	height:60px;
+	z-index:4;
+}
+
+
+
+#apDiv19 {
+	position:absolute;
+	left:55px;
+	top:160px;
+	width:640px;
+	height:300px;
+	z-index:5;
+}
+-->
+</style>
+<script type = "text/javascript">
+<!--
+	// Initiate global variables.
+	var gameState = 0;
+	var gridWidth = 17;
+	var gridLength = 15;
+	var gridMap$;
+	
+	//-------------------------
+	//     General methods
+	//-------------------------
+	
+	function Random (maxValue) {
+		randomNumber = maxValue * Math.random();
+		randomNumber = Math.ceil (randomNumber);
+		return randomNumber;
+	}
+	
+	function DrawSprite () {
+		// Reposition the sprite.
+		element = document.getElementById (this.spanID$);
+		element.style.left = this.spriteX;
+		element.style.top = this.spriteY;
+		element = document.getElementById (this.imgID$);
+		element.src = this.sprite$;
+	}
+	
+	function StartGame () {
+		gameState = 1;
+		
+		room = new Room ();
+		room.newRoom = 1;
+		room.DrawSprite ();
+	
+		player1 = new Entity ();
+		player1.type$ = "Player";
+		player1.spanID$ = "player1Span";
+		player1.imgID$ = "player1Img";
+		player1.name$ = "Player 1";
+		player1.sprite$ = "http://209.85.48.12/11610/159/upload/p4560934.gif"
+		player1.gridX = 3;
+		player1.gridY = 10;
+		player1.DrawEntity ();
+	}
+
+	function LoadRoom (newRoom) {
+		// Room vars.
+		room.sprite$ = "http://209.85.48.12/11610/159/upload/p4562592.gif"
+		gridMap$ = new Array (gridSize);
+		gridMap$  [1] = " 00000000000000000";
+		gridMap$  [2] = " 0022223000222302a";
+		gridMap$  [3] = " 00b00023001002c10";
+		gridMap$  [4] = " 0014000d001000000";
+		gridMap$  [5] = " 00010034001400000";
+		gridMap$  [6] = " 022100e000014f440";
+		gridMap$  [7] = " 01000022230000010";
+		gridMap$  [8] = " 01000000022222210";
+		gridMap$  [9] = " 01444400000000000";
+		gridMap$ [10] = " 0000014g444400000";
+		gridMap$ [11] = " 00000000000144440";
+		gridMap$ [12] = " 00000000000000010";
+		gridMap$ [13] = " 00222h30002223010";
+		gridMap$ [14] = " 22100022221002i10";
+		gridMap$ [15] = " 22100022221002i10";
+		room.DrawSprite ();
+	}
+	
+	function HandleKeydown (ev) {
+		// Figure out which keyboard key was typed and store it in the "key" variable.
+		key = ( (ev.which) || (ev.keyCode) );
+		// Check which direction the player is trying to move in.
+		switch (key) {
+		case 38: // Up Arrow was pressed.
+			player1.MovePlayer ("Up");
+			break;
+		case 40: // Down Arrow was pressed.
+			player1.MovePlayer ("Down");
+			break;
+		case 37: // Left Arrow was pressed.
+			player1.MovePlayer ("Left");
+			break;	
+		case 39: // Right Arrow was pressed.
+			player1.MovePlayer ("Right");
+			break;
+		}
+		player1.DrawEntity ();
+	}
+	
+	//-------------------------
+	///////////////////////////
+	//-------------------------
+	
+	//-------------------------
+	// Entity related methods
+	//-------------------------
+	
+	function Room () {
+		this.spanID$ = "roomSpan";
+		this.imgID$ = "roomImg";
+		this.sprite$ = "";
+		this.spriteX = 0;
+		this.spriteY = 0;		
+		this.DrawSprite = DrawSprite;
+	}
+	
+	function Entity () {
+		this.name$ = "Unnamed Entity";
+		this.type$ = "Player";
+		this.spanID$ = "";
+		this.imgID$ = "";
+		this.sprite$ = "";
+		this.gridX = 1;
+		this.gridY = 1;
+		this.newGridX = this.gridX;
+		this.newGridY = this.gridY;
+		this.spriteX = this.gridX * 43;
+		this.spriteX = this.spriteX - 43;
+		this.spriteY = this.gridY * 43;
+		this.spriteY = this.spriteY - 43;
+		this.tile$ = "Empty";
+		
+		this.DrawEntity = DrawEntity;
+		this.MovePlayer = MovePlayer;
+		this.ChangeSprite = ChangeSprite;
+		this.PerformAction = PerformAction;
+	}
+	
+	function ChangeSprite (newSprite$) {
+		this.sprite$ = newSprite$;
+		element = document.getElementById (this.imgID$);
+		element.src = this.sprite$;
+	}
+	
+	function DrawEntity () {
+		// Determine the entity's sprite coordinates based on its grid coordinates.
+		this.spriteX = this.gridX * 43;
+		this.spriteX = this.spriteX - 43;
+		this.spriteY = this.gridY * 43;
+		this.spriteY = this.spriteY - 43;
+		// Reposition the sprite.
+		element = document.getElementById (this.spanID$);
+		element.style.left = this.spriteX;
+		element.style.top = this.spriteY;
+		element = document.getElementById (this.imgID$);
+		element.src = this.sprite$;
+	}
+	
+	function MovePlayer (direction$) {
+		this.newGridX = this.gridX;
+		this.newGridY = this.gridY;
+		
+		if (direction$ == "Up") {this.newGridY = this.gridY - 1;}
+		if (direction$ == "Down") {this.newGridY = this.gridY + 1;}
+		if (direction$ == "Left") {this.newGridX = this.gridX - 1;}
+		if (direction$ == "Right") {this.newGridX = this.gridX + 1;}
+		
+		// Check what kind of tile the player is trying to move onto.
+		gridMapRowX$ = gridMap$ [this.newGridY];
+		this.tile$ = gridMapRowX$.charAt (this.newGridX);
+		if (this.tile$ == "0") {this.tile$ = "Empty"}
+		if (this.tile$ == "1") {this.tile$ = "Wall"}
+		if (this.tile$ == "2") {this.tile$ = "Door"}
+		if (this.tile$ == "9") {this.tile$ = "Empty"}
+		
+		// Check if the player is entering another room.
+		if (this.newGridY < 1) {this.tile$ = "Wall";}
+		if (this.newGridY > gridLength) {this.tile$ = "Wall";}
+		if (this.newGridX < 1) {this.tile$ = "Wall";}
+		if (this.newGridX > gridWidth) {this.tile$ = "Wall";}
+
+		// Perform the new tile's behaviour.
+		if (this.tile$ == "Empty") {
+			this.gridX = this.newGridX;
+			this.gridY = this.newGridY;
+		}
+		if (this.tile$ == "Wall") {
+			this.newGridX = this.gridX;
+			this.newGridY = this.gridY;
+		}
+	}
+
+	//-------------------------
+	///////////////////////////
+	//-------------------------
+	
+-->
+</script>
+</head>
+
+<body style="background-image:url(images/bg.gif); background-repeat:repeat;">
+
+<div id="apDiv1">
+	<div id="apDiv2"><img src="images/board.gif" width="749" height="661" alt="Game Board" /></div>
+    <div id="apDiv3">
+		<div id="apDiv4"><img src="images/item1b.gif" alt="No Item" width="60" height="60" /></div>
+		<div id="apDiv5"><img src="images/item2b.gif" alt="No Item" width="60" height="60" /></div>
+		<div id="apDiv6"><img src="images/item3b.gif" alt="No Item" width="60" height="60" /></div>
+        <div align="center"></div>
+        <div align="center" class="style1">Silverwind</div>
+    </div>
+    <div id="apDiv7">
+		<div id="apDiv8"><img src="images/item1b.gif" alt="No Item" width="60" height="60" /></div>
+		<div id="apDiv9"><img src="images/item2b.gif" alt="No Item" width="60" height="60" /></div>
+		<div id="apDiv10"><img src="images/item3b.gif" alt="No Item" width="60" height="60" /></div>
+        <div align="center"></div>
+        <div align="center" class="style1">Woodhaven</div>
+    </div>
+    <div id="apDiv11">
+		<div id="apDiv12"><img src="images/item1b.gif" alt="No Item" width="60" height="60" /></div>
+		<div id="apDiv13"><img src="images/item2b.gif" alt="No Item" width="60" height="60" /></div>
+		<div id="apDiv14"><img src="images/item3b.gif" alt="No Item" width="60" height="60" /></div>
+        <div align="center"></div>
+        <div align="center" class="style1">Sora</div>
+    </div>
+    <div id="apDiv15">
+		<div id="apDiv16"><img src="images/item1b.gif" alt="No Item" width="60" height="60" /></div>
+		<div id="apDiv17"><img src="images/item2b.gif" alt="No Item" width="60" height="60" /></div>
+		<div id="apDiv18"><img src="images/item3b.gif" alt="No Item" width="60" height="60" /></div>
+        <div align="center"></div>
+        <div align="center" class="style1">Jinxycat</div>
+    </div>
+    <div id="apDiv19"></div>
+</div>
+
+</body>
+</html>

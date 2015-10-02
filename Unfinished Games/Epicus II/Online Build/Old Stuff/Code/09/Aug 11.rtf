@@ -1,0 +1,415 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf540
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 <html>\
+<head>\
+<title>Epicus Online</title>\
+<script src="SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>\
+<script type = "text/javascript">\
+<!--\
+	// Initiate global variables.\
+	var gameState = 0;\
+	var gridSize;\
+	var gridMap$;\
+	\
+	//-------------------------\
+	// General methods\
+	//-------------------------\
+	\
+	function Random (maxValue) \{\
+		randomNumber = maxValue * Math.random();\
+		randomNumber = Math.ceil (randomNumber);\
+		return randomNumber;\
+	\}\
+	\
+	function DrawSprite () \{\
+		// Reposition the sprite.\
+		element = document.getElementById (this.spanID$);\
+		element.style.left = this.spriteX;\
+		element.style.top = this.spriteY;\
+		element = document.getElementById (this.imgID$);\
+		element.src = this.sprite$;\
+	\}\
+	\
+	function StartGame () \{\
+		gameState = 1;\
+		\
+		room = new Room ();\
+		room.sprite$ = "http://209.85.48.12/11610/159/upload/p4560898.gif";\
+		room.newRoom = 1;\
+		room.DrawSprite ();\
+	\
+		player1 = new Entity ();\
+		player1.type$ = "Player";\
+		player1.spanID$ = "player1Span";\
+		player1.imgID$ = "player1Img";\
+		player1.name$ = "Adventurer";\
+		player1.sprite$ = "http://209.85.48.12/11610/159/upload/p4560934.gif"\
+		player1.gridX = 3;\
+		player1.gridY = 10;\
+		player1.DrawEntity ();\
+		\
+		npc1 = new Entity ();\
+	\}\
+\
+	function LoadRoom (newRoom) \{\
+		switch (newRoom) \{\
+		case 1:\
+			// Room vars.\
+			room.sprite$ = "http://209.85.48.12/11610/159/upload/p4560898.gif"\
+			gridSize = 14\
+			gridMap$ = new Array (gridSize);\
+			gridMap$  [1] = " 00000010000000";\
+			gridMap$  [2] = " 10000000000000";\
+			gridMap$  [3] = " 00000011111001";\
+			gridMap$  [4] = " 00010010001100";\
+			gridMap$  [5] = " 10000010000100";\
+			gridMap$  [6] = " 00000011090100";\
+			gridMap$  [7] = " 00010001121100";\
+			gridMap$  [8] = " 01000000090000";\
+			gridMap$  [9] = " 00001000000000";\
+			gridMap$ [10] = " 10000000000010";\
+			gridMap$ [11] = " 00000000100000";\
+			gridMap$ [12] = " 01001000001000";\
+			gridMap$ [13] = " 00100001000001";\
+			gridMap$ [14] = " 10000100000100";\
+			room.northRoom = 0;\
+			room.southRoom = 0;\
+			room.westRoom = 0;\
+			room.eastRoom = 2;\
+			signpostText$ = "Signpost: ";\
+			\
+			// NPC vars.\
+			npc1.type$ = "NPC";\
+			npc1.spanID$ = "npc1Span";\
+			npc1.imgID$ = "npc1Img";\
+			npc1.name$ = "Herman";\
+			npc1.sprite$ = "http://209.85.48.12/11610/159/upload/p4561618.gif"\
+			npc1.gridX = 9;\
+			npc1.gridY = 4;\
+			npc1.speech$ = "Hi there friend, my name's Herman and I got stuck with the duty of welcoming you to Epicus Online (though frankly there isn't much to welcome you to yet). Bear with us while Silver creates the world. I hope he hurries up, 'cause I got better things to be doing than walking around a tiny room all day...";\
+			npc1.DrawEntity ();\
+			break;\
+		case 2:\
+			// Room vars.\
+			room.sprite$ = "http://209.85.48.12/11610/159/upload/p4560899.gif"\
+			gridSize = 14\
+			gridMap$ = new Array (gridSize);\
+			gridMap$  [1] = " 00000100000010";\
+			gridMap$  [2] = " 00000000010010";\
+			gridMap$  [3] = " 10000000100000";\
+			gridMap$  [4] = " 00010000000100";\
+			gridMap$  [5] = " 00000011111001";\
+			gridMap$  [6] = " 00000010001000";\
+			gridMap$  [7] = " 00000010901010";\
+			gridMap$  [8] = " 01001111211000";\
+			gridMap$  [9] = " 00001000901000";\
+			gridMap$ [10] = " 00092900001000";\
+			gridMap$ [11] = " 00001000001100";\
+			gridMap$ [12] = " 00101111911000";\
+			gridMap$ [13] = " 10000010000001";\
+			gridMap$ [14] = " 00000001010000";\
+			room.northRoom = 0;\
+			room.southRoom = 0;\
+			room.westRoom = 1;\
+			room.eastRoom = 0;\
+			signpostText$ = "Signpost: ";\
+			\
+			// NPC vars.\
+			npc1.type$ = "NPC";\
+			npc1.spanID$ = "npc1Span";\
+			npc1.imgID$ = "npc1Img";\
+			npc1.name$ = "Skeleton";\
+			npc1.sprite$ = "http://209.85.48.12/11610/159/upload/p4557408.gif"\
+			npc1.gridX = 9;\
+			npc1.gridY = 10;\
+			npc1.speech$ = "A dungeon here, an NPC's house there... we'll have this place finished in no time!";\
+			npc1.DrawEntity ();\
+			break;\
+		\}\
+		room.DrawSprite ();\
+	\}\
+	\
+	function HandleKeydown (ev) \{\
+		// Figure out which keyboard key was typed and store it in the "key" variable.\
+		df = document.forms [0];\
+		key = ( (ev.which) || (ev.keyCode) );\
+		// Check which direction the player is trying to move in.\
+		switch (key) \{\
+		case 38: // Up Arrow was pressed.\
+			player1.MovePlayer ("Up");\
+			break;\
+		case 40: // Down Arrow was pressed.\
+			player1.MovePlayer ("Down");\
+			break;\
+		case 37: // Left Arrow was pressed.\
+			player1.MovePlayer ("Left");\
+			break;	\
+		case 39: // Right Arrow was pressed.\
+			player1.MovePlayer ("Right");\
+			break;\
+		\}\
+		player1.DrawEntity ();\
+	\}\
+	\
+	function TimedCount () \{\
+		npc1.PerformAction ();\
+		npc1.DrawEntity ();\
+		timer = setTimeout ("TimedCount ()", 1000);\
+	\}\
+	\
+	\
+	//-------------------------\
+	///////////////////////////\
+	//-------------------------\
+	\
+	//-------------------------\
+	// Entity related methods\
+	//-------------------------\
+	\
+	function Room () \{\
+		this.spanID$ = "roomSpan";\
+		this.imgID$ = "roomImg";\
+		this.sprite$ = "";\
+		this.spriteX = 5;\
+		this.spriteY = 5;\
+		this.newRoom = 0;\
+		this.northRoom = 0;\
+		this.southRoom = 0;\
+		this.westRoom = 0;\
+		this.eastRoom = 0;\
+		\
+		this.DrawSprite = DrawSprite;\
+	\}\
+	\
+	function Entity () \{\
+		this.name$ = "Unnamed Entity";\
+		this.type$ = "NPC";\
+		this.spanID$ = "";\
+		this.imgID$ = "";\
+		this.sprite$ = "";\
+		this.gridX = 1;\
+		this.gridY = 1;\
+		this.newGridX = this.gridX;\
+		this.newGridY = this.gridY;\
+		this.spriteX = this.gridX * 43;\
+		this.spriteX = this.spriteX - 38;\
+		this.spriteY = this.gridY * 43;\
+		this.spriteY = this.spriteY - 38;\
+		this.tile$ = "Empty";\
+		\
+		this.DrawEntity = DrawEntity;\
+		this.MovePlayer = MovePlayer;\
+		this.ChangeSprite = ChangeSprite;\
+		this.PerformAction = PerformAction;\
+	\}\
+	\
+	function ChangeSprite (newSprite$) \{\
+		this.sprite$ = newSprite$;\
+		element = document.getElementById (this.imgID$);\
+		element.src = this.sprite$;\
+	\}\
+	\
+	function DrawEntity () \{\
+		// Determine the entity's sprite coordinates based on its grid coordinates.\
+		this.spriteX = this.gridX * 43;\
+		this.spriteX = this.spriteX - 38;\
+		this.spriteY = this.gridY * 43;\
+		this.spriteY = this.spriteY - 38;\
+		// Reposition the sprite.\
+		element = document.getElementById (this.spanID$);\
+		element.style.left = this.spriteX;\
+		element.style.top = this.spriteY;\
+		element = document.getElementById (this.imgID$);\
+		element.src = this.sprite$;\
+	\}\
+	\
+	function MovePlayer (direction$) \{\
+		this.newGridX = this.gridX;\
+		this.newGridY = this.gridY;\
+		\
+		if (direction$ == "Up") \{this.newGridY = this.gridY - 1;\}\
+		if (direction$ == "Down") \{this.newGridY = this.gridY + 1;\}\
+		if (direction$ == "Left") \{this.newGridX = this.gridX - 1;\}\
+		if (direction$ == "Right") \{this.newGridX = this.gridX + 1;\}\
+		\
+		// Check what kind of tile the player is trying to move onto.\
+		gridMapRowX$ = gridMap$ [this.newGridY];\
+		this.tile$ = gridMapRowX$.charAt (this.newGridX);\
+		if (this.tile$ == "0") \{this.tile$ = "Empty"\}\
+		if (this.tile$ == "1") \{this.tile$ = "Wall"\}\
+		if (this.tile$ == "2") \{this.tile$ = "Door"\}\
+		if (this.tile$ == "9") \{this.tile$ = "Empty"\}\
+		\
+		// Check if the player is entering another room.\
+		if (this.newGridY < 1) \{\
+			this.tile$ = "Wall";\
+			if (room.northRoom > 0) \{\
+				this.gridY = gridSize;\
+				LoadRoom (room.northRoom);\
+			\}\
+		\}\
+		if (this.newGridY > gridSize) \{\
+			this.tile$ = "Wall";\
+			if (room.southRoom > 0) \{\
+				this.gridY = 1;\
+				LoadRoom (room.southRoom);\
+			\}\
+		\}\
+		if (this.newGridX < 1) \{\
+			this.tile$ = "Wall";\
+			if (room.westRoom > 0) \{\
+				this.gridX = gridSize;\
+				LoadRoom (room.westRoom);\
+			\}\
+		\}\
+		if (this.newGridX > gridSize) \{\
+			this.tile$ = "Wall";\
+			if (room.eastRoom > 0) \{\
+				this.gridX = 1;\
+				LoadRoom (room.eastRoom);\
+			\}\
+		\}\
+		\
+		// Check for collision with other entities.\
+		if (this.newGridX == npc1.gridX && this.newGridY == npc1.gridY) \{\
+			this.tile$ = "Wall";\
+			//element = document.getElementById ("textField1");\
+			//element.value = (npc1.name$ + ": " + npc1.speech$ + "");\
+			element = document.getElementById ("textField1Label");\
+			element.innerText = (npc1.name$);\
+			element = document.getElementById ("textField1");\
+			element.value = (npc1.speech$);\
+		\}\
+\
+		// Perform the new tile's behaviour.\
+		if (this.tile$ == "Door") \{\
+			if (direction$ == "Up") \{this.newGridY = this.newGridY - 1\}\
+			if (direction$ == "Down") \{this.newGridY = this.newGridY + 1\}\
+			if (direction$ == "Left") \{this.newGridX = this.newGridX - 1\}\
+			if (direction$ == "Right") \{this.newGridX = this.newGridX + 1\}\
+			this.tile$ = "Empty";\
+		\}\
+		if (this.tile$ == "Signpost") \{\
+			alert (signpostText$);\
+			this.tile$ = "Wall";\
+		\}\
+		if (this.tile$ == "Empty") \{\
+			this.gridX = this.newGridX;\
+			this.gridY = this.newGridY;\
+		\}\
+		if (this.tile$ == "Wall") \{\
+			this.newGridX = this.gridX;\
+			this.newGridY = this.gridY;\
+		\}\
+	\}\
+	\
+	function PerformAction () \{\
+		if (this.type$ == "NPC") \{\
+			this.newGridX = this.gridX;\
+			this.newGridY = this.gridY;\
+			\
+			// Simple NPC AI.\
+			action = Random (4);\
+			if (action == 1) \{action$ = "Move Up"\}\
+			if (action == 2) \{action$ = "Move Down"\}\
+			if (action == 3) \{action$ = "Move Left"\}\
+			if (action == 4) \{action$ = "Move Right"\}\
+			// Check which direction the NPC is attempting to move in.\
+			if (action$ == "Move Up") \{this.newGridY = this.gridY - 1\}\
+			if (action$ == "Move Down") \{this.newGridY = this.gridY + 1\}\
+			if (action$ == "Move Left") \{this.newGridX = this.gridX - 1\}\
+			if (action$ == "Move Right") \{this.newGridX = this.gridX + 1\}\
+			\
+			// Check what kind of tile the NPC is trying to move onto.\
+			gridMapRowX$ = gridMap$ [this.newGridY];\
+			this.tile$ = gridMapRowX$.charAt (this.newGridX);\
+			if (this.tile$ == "0") \{this.tile$ = "Empty"\}\
+			if (this.tile$ != "Empty") \{this.tile$ = "Wall"\}\
+			// This prevents the NPC from walking out of the room.\
+			if (this.newGridX < 1) \{this.tile$ = "Wall"\}\
+			if (this.newGridX > gridSize) \{this.tile$ = "Wall"\}\
+			if (this.newGridY < 1) \{this.tile$ = "Wall"\}\
+			if (this.newGridY > gridSize) \{this.tile$ = "Wall"\}\
+			\
+			// Check for collision with other entities.\
+			if (this.newGridX == player1.gridX && this.newGridY == player1.gridY) \{this.tile$ = "Wall"\}\
+			\
+			// Perform the new tile's behaviour.\
+			if (this.tile$ == "Empty") \{\
+				this.gridX = this.newGridX;\
+				this.gridY = this.newGridY;\
+			\}\
+			if (this.tile$ == "Wall") \{\
+				this.newGridX = this.gridX;\
+				this.newGridY = this.gridY;\
+			\}\
+		\}\
+	\}\
+\
+	//-------------------------\
+	///////////////////////////\
+	//-------------------------\
+	\
+-->\
+</script>\
+<style type="text/css">\
+<!--\
+#appDiv1 \{\
+	position:absolute;\
+	left:612px;\
+	top:5px;\
+	width:182px;\
+	height:185px;\
+	z-index:5;\
+	overflow: auto;\
+	background-color: #FFFFFF;\
+\}\
+-->\
+</style>\
+<link href="SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css">\
+<style type="text/css">\
+<!--\
+#apDiv1 \{\
+	position:absolute;\
+	left:612px;\
+	top:5px;\
+	width:210px;\
+	height:240px;\
+	z-index:5;\
+\}\
+#apDiv2 \{\
+	position:absolute;\
+	width:210px;\
+	height:216px;\
+	z-index:6;\
+	left: 9px;\
+	top: 49px;\
+\}\
+-->\
+</style>\
+</head>\
+<body onkeydown = "HandleKeydown (event)" >\
+<span id = "roomSpan" style = "visibility:visible; position:absolute; z-index:1;"> <img id = "roomImg"/> </span>\
+<span id = "player1Span" style = "visibility:visible; position:absolute; z-index:4;"> <img id = "player1Img"/> </span>\
+<span id = "npc1Span" style = "visibility:visible; position:absolute; z-index:3;"> <img id = "npc1Img"/> </span>\
+\
+<div id = "apDiv1">\
+	<div align = "center">\
+	  <label id = "textField1Label">Text</label>\
+      <textarea id = "textField1" cols = "22" rows = "12" style = "text-align:center; padding:5" readonly disabled> </textarea>\
+    </div>\
+</div>\
+\
+<script type = "text/javascript">\
+<!--\
+if (gameState == 0) \{ StartGame () \}\
+	LoadRoom (room.newRoom);\
+	TimedCount ()\
+//-->\
+</script>\
+</body>\
+</html>}
